@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "ButlerApp",
-  "description": "This extension will analyze a page using GTmetrix",
+  "description": "This extension will parse recipe ingredient data into an easily accessible s u c c",
   "version": "1.0",
 
   "browser_action": {
@@ -10,7 +10,8 @@
    "default_popup": "html/popup.html"
   },
   "permissions": [
-   "activeTab"
+   "activeTab",
+   "tabs"
    ]
    // "content_scripts": [
    //  {
