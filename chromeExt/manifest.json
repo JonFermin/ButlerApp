@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "ButlerApp",
+  "description": "This extension will analyze a page using GTmetrix",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "html/popup.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
+   // "content_scripts": [
+   //  {
+   //    "matches": ["http://www.domain.com/page.html"],
+   //    "js": ["jquery.js","highlightNumbers.js"],
+   //    "css": ["highlight.css"]
+   //  }],
+   //  "permissions": ["http://www.domain.com/*"]
+} 
