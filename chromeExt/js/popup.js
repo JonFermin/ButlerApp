@@ -1,26 +1,32 @@
+function httpGet(theUrl)
+  {
 
-chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-    var url = tabs[0].url;
-});
-console.log(url);
+    var xmlHttp = new XMLHttpRequest();
+    // if ("withCredentials" in xhr){
+    //     xmlHttp.open(method, url, true)
+    // }
+    xmlHttp.open( "GET", "http://10.203.148.230:3000/" + "?var1=http://allrecipes.com/recipe/79543/fried-rice-restaurant-style/", true ); // false for synchronous request
+    xmlHttp.send( "http://allrecipes.com/recipe/79543/fried-rice-restaurant-style/" );
+    console.log(JSON.stringify(xmlHttp.responseText));
+    return xmlHttp.responseText;
 
-document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  checkPageButton.addEventListener('click', function() {
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById("push");
+    el.addEventListener('click', httpGet, false);
+  });
 
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
 
-      var f = d.createElement('form');
-      f.action = 'http://gtmetrix.com/analyze.html?bm';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
-    });
-  }, false);
-}, false);
+// chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+//     var url = tabs[0].url;
+// });
+// console.log(url);
+
+
+// function hello() {
+//   chrome.tabs.executeScript({
+//     file: 'alert.js'
+//   }); 
+// }
+
+// document.getElementById('clickme').addEventListener('click', hello());
