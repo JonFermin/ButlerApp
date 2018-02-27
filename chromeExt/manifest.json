@@ -12,8 +12,9 @@
 
   "content_security_policy": "script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='",
   "permissions": [
-    "http://10.203.151.16*",
-    "http://10.203.148.230*",
+    "storage",
+    "http://localhost:3000/*",
+    // "http://10.203.148.230*",
    "activeTab",
    "tabs"
    ]

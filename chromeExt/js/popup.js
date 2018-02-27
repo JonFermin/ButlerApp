@@ -1,32 +1,26 @@
 function httpGet(theUrl)
   {
-
-    var xmlHttp = new XMLHttpRequest();
-    // if ("withCredentials" in xhr){
-    //     xmlHttp.open(method, url, true)
-    // }
-    xmlHttp.open( "GET", "http://10.203.148.230:3000/" + "?var1=http://allrecipes.com/recipe/79543/fried-rice-restaurant-style/", true ); // false for synchronous request
-    xmlHttp.send( "http://allrecipes.com/recipe/79543/fried-rice-restaurant-style/" );
-    console.log(JSON.stringify(xmlHttp.responseText));
-    return xmlHttp.responseText;
-
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+      var url = tabs[0].url;
+      var xmlHttp = new XMLHttpRequest();
+      var opening = xmlHttp.open( "GET", "http://localhost:3000/" + "?var1=" + url, true ); // false for synchronous request
+      xmlHttp.send(null);
+      xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == XMLHttpRequest.DONE) {
+          console.log("Writing Ingredient List to Extension");
+          console.log(JSON.parse(xmlHttp.responseText));
+          $("#ingredientsList")[0].append(xmlHttp);
+          return xmlHttp.responseText;
+        }
+      }
+    });
   }
+
+
+
+
   document.addEventListener('DOMContentLoaded', function () {
     var el = document.getElementById("push");
     el.addEventListener('click', httpGet, false);
+    // document.getElementById("ingredientsList").innerHTML = JSON.stringify(httpGet);
   });
-
-
-// chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-//     var url = tabs[0].url;
-// });
-// console.log(url);
-
-
-// function hello() {
-//   chrome.tabs.executeScript({
-//     file: 'alert.js'
-//   }); 
-// }
-
-// document.getElementById('clickme').addEventListener('click', hello());
