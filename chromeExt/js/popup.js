@@ -8,7 +8,7 @@ function httpGet(theUrl)
       xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == XMLHttpRequest.DONE) {
           console.log("Writing Ingredient List to Extension");
-          console.log(JSON.parse(xmlHttp.responseText));
+          // console.log(JSON.parse(xmlHttp.responseText));
           $("#ingredientsList")[0].append(xmlHttp);
           return xmlHttp.responseText;
         }
