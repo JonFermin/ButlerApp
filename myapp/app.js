@@ -2,7 +2,7 @@ var spawn = require("child_process").spawn;
 // node package for running python script
 var url = 'http://allrecipes.com/recipe/79543/fried-rice-restaurant-style/';
 // example url
-var pythonProcess = spawn('python3.5',["../recipe-scrapers/run.py", url]);
+var pythonProcess = spawn('python3.6',["../recipe-scrapers/run.py", url]);
 var express = require('express');
 // create server using express
 var app = express();
@@ -17,30 +17,34 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function (req, res) { // req is object containing information about the HTTP request
+app.post('/', function (req, res) { // req is object containing information about the HTTP request
 								   // res is used to send back the desired HTTP response
 	var spawn = require("child_process").spawn;
 	var url = req.query.var1;
-	var pythonProcess = spawn('python3.5',["../recipe-scrapers/run.py", url]);
+	console.log("hello" + url);
+	var pythonProcess = spawn('python3.6',["../recipe-scrapers/run.py", url]);
  	pythonProcess.stdout.on('data', function (data){
 	// Do something with the data returned from python script
 		var arr = JSON.stringify(data.toString('utf8'),null,2).replace(']\\n"','').replace("'\\'","");
 		var arr2 = data.toString('utf8');
-
+		console.log(arr2);
 		//Python provides string array of ingredients
 		//String array converted to a string, then parsed and converted to JSON
 
 		var arrSplit = arr.split(',');
-		var concatstring = "";
+		var ingredientArray = [];
 		for (i = 4; i < arrSplit.length; i++) {
 			var string = arrSplit[i].replace(" \'",'').replace("''","").replace("\\","").replace(" ", "").replace("\'","");
-    		concatstring = concatstring + JSON.stringify(ingredients.parse(string));
+			ingredientArray.push(ingredients.parse(string));
 		}
 		console.log("ping!!!");
-		res.send(concatstring);
+		console.log(JSON.stringify(ingredientArray));
+		res.send(JSON.stringify(ingredientArray));
 
 	});
 });
+
+// app.get('/', function)
 
 app.listen(3000, function () {
     pythonProcess.stdout.on('data', function (data){
