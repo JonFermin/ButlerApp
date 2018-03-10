@@ -30,14 +30,14 @@ app.get('/', function (req, res) { // req is object containing information about
 		//Python provides string array of ingredients
 		//String array converted to a string, then parsed and converted to JSON
 
-		var arrSplit = arr.split(',')
+		var arrSplit = arr.split(',');
 		var concatstring = "";
 		for (i = 4; i < arrSplit.length; i++) {
 			var string = arrSplit[i].replace(" \'",'').replace("''","").replace("\\","").replace(" ", "").replace("\'","");
     		concatstring = concatstring + JSON.stringify(ingredients.parse(string));
 		}
-		console.log("ping!!!")
-		res.send(concatstring)
+		console.log("ping!!!");
+		res.send(concatstring);
 
 	});
 });
@@ -48,7 +48,7 @@ app.listen(3000, function () {
 		console.log("I'm here");
 		var arr = JSON.stringify(data.toString('utf8'),null,2).replace(']\\n"','').replace("'\\'","");
 		var arr2 = data.toString('utf8');
-		var arrSplit = arr.split(',')
+		var arrSplit = arr.split(',');
 		console.log(arr);
 
 	});
