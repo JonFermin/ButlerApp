@@ -10,13 +10,13 @@
    "default_popup": "html/popup.html"
   },
 
-  "content_security_policy": "script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='",
+  "content_security_policy": "script-src 'self' https://code.jquery.com/; object-src 'self'",
   "permissions": [
     "storage",
     "http://localhost:3000/*",
     // "http://10.203.148.230*",
-   "activeTab",
-   "tabs"
+    "activeTab",
+    "tabs"
    ]
    // "content_scripts": [
    //  {

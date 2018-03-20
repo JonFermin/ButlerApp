@@ -1,0 +1,82 @@
+[
+  {
+    "quantity": "0.25",
+    "unit": "cup",
+    "ingredient": "bacon bits"
+  },
+  {
+    "quantity": "0.25",
+    "unit": "cup",
+    "ingredient": "crushed pineapple"
+  },
+  {
+    "quantity": null,
+    "unit": null,
+    "ingredient": "drained"
+  },
+  {
+    "quantity": "1",
+    "unit": null,
+    "ingredient": "dash Worcestershire sauce"
+  },
+  {
+    "quantity": "1",
+    "unit": "pound",
+    "ingredient": "ground beef"
+  },
+  {
+    "quantity": "0.25",
+    "unit": "cup",
+    "ingredient": "dry bread crumbs"
+  },
+  {
+    "quantity": "0.25",
+    "unit": "cup",
+    "ingredient": "crushed saltine crackers"
+  },
+  {
+    "quantity": "1",
+    "unit": null,
+    "ingredient": "egg"
+  },
+  {
+    "quantity": null,
+    "unit": null,
+    "ingredient": "beaten"
+  },
+  {
+    "quantity": "0.5",
+    "unit": "clove",
+    "ingredient": "garlic"
+  },
+  {
+    "quantity": null,
+    "unit": null,
+    "ingredient": "minced"
+  },
+  {
+    "quantity": "0.25",
+    "unit": null,
+    "ingredient": "onion"
+  },
+  {
+    "quantity": null,
+    "unit": null,
+    "ingredient": "minced"
+  },
+  {
+    "quantity": "2",
+    "unit": null,
+    "ingredient": "dashes Worcestershire sauce"
+  },
+  {
+    "quantity": "0.75",
+    "unit": "teaspoon",
+    "ingredient": "salt"
+  },
+  {
+    "quantity": "0.25",
+    "unit": "teaspoon",
+    "ingredient": "ground black pepper"
+  }
+]

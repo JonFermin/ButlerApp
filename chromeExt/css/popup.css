@@ -1,7 +1,14 @@
 header {
 	width: 200px;
+	margin: 0 auto;
 	text-align: center;
 }
+
+html {
+	min-height: 400px; 
+	min-width: 800px;
+}
+
 
 h1 {
 	/*color: orange;*/
@@ -23,4 +30,44 @@ main {
 	width: 100%;
 	/*background: orange;*/
 	/*color: white;*/
+}
+
+
+
+
+
+/*Table CSS*/
+
+.table-editable {
+  position: relative;
+}
+.table-editable .glyphicon {
+  font-size: 20px;
+}
+
+.table-remove {
+  color: #700;
+  cursor: pointer;
+}
+.table-remove:hover {
+  color: #f00;
+}
+
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+}
+.table-up:hover, .table-down:hover {
+  color: #00f;
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.table-add:hover {
+  color: #0b0;
 }

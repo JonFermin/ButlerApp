@@ -2,23 +2,63 @@
 <html>
   <head>
     <title>Butler App</title>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'sha256-WOdSzz11/3cpqOdrm89LBL2UPwEU9EhbDtMy2OciEhs='">
     <link rel="stylesheet" type="text/css" href="../css/popup.css">
     
-    <script type="text/javascript" src="../js/popup.js"></script>
-    <script src="../js/jquery-3.3.1.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <h1>BUTLER</h1>
-    </header>
-    
-    <main id="ingredientsList">
-      
-    </main>
-    <div id="button">
-      <button id="push"> Grab Ingredients </button>
-    </div>
+    <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
 
-  </body>
+
+  </head>
+    <body>
+      <header>
+        <h1>BUTLER</h1>
+      </header>
+      
+      <main id="ingredientsList">
+    <div class="container">
+    <div id="table" class="table-editable">
+      <span class="table-add glyphicon glyphicon-plus"></span>
+      <table class="table">
+        <tr>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Ingredient</th>
+        </tr>
+        <tr class="hide">
+          <td contenteditable="true">Untitled</td>
+          <td contenteditable="true">undefined</td>
+          <td contenteditable="true">undefined</td>
+          <td>
+            <span class="table-remove glyphicon glyphicon-remove"></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+      
+      <button id="export-btn" class="btn btn-primary">Export Data</button>
+      <p id="export"></p>
+    </div>
+      </main>
+      <div id="button">
+        <button id="push"> Grab Ingredients </button>
+      </div>
+
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    
+
+    <script
+      src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+      integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+      crossorigin="anonymous"></script>
+    <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
+
+
+    <script type="text/javascript" src="../js/table.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+
+
+    </body>
 </html>

@@ -6,10 +6,16 @@ var pythonProcess = spawn('python3.6',["../recipe-scrapers/run.py", url]);
 var express = require('express');
 // create server using express
 var app = express();
+var bodyParser = require('body-parser');
 var ingredients = require('recipe-ingredient-parser');
 //node package for ingredient grabber
 var str = '100 liters of white milk, 1 cup of water,  2 1/2 cups all-purpose flour'
 var inputStr = str.split(',')
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -19,10 +25,15 @@ app.use(function(req, res, next) {
 
 app.post('/', function (req, res) { // req is object containing information about the HTTP request
 								   // res is used to send back the desired HTTP response
+	console.log("im here");
 	var spawn = require("child_process").spawn;
-	var url = req.query.var1;
-	console.log("hello" + url);
-	var pythonProcess = spawn('python3.6',["../recipe-scrapers/run.py", url]);
+	var urls = Object.keys(req.body.butler);
+	console.log(urls.length);
+	if ( urls.length > 0 ) {
+		urls = urls.join(",");
+	}
+	console.log(urls);
+	var pythonProcess = spawn('python3.6',["../recipe-scrapers/run.py", urls]);
  	pythonProcess.stdout.on('data', function (data){
 	// Do something with the data returned from python script
 		var arr = JSON.stringify(data.toString('utf8'),null,2).replace(']\\n"','').replace("'\\'","");
