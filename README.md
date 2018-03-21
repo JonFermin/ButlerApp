@@ -1,12 +1,6 @@
 # ButlerApp
 Finish and order your groceries with a few clicks!
 
-### Contributors
-Jonathan Fermin <br />
-Richard Li <br />
-Ian Fawaz <br />
-Chris Chang <br />
-
 ![alt text](./documentation/draft1.png)
 
 ## Pitch
@@ -34,3 +28,9 @@ The goal with this application is to reduce time shopping for groceries and offe
 - Amazon Fresh/Instacart Integration
 - Meal Plan Calendar
 - OCR - input recipe from image
+
+### Contributors
+Jonathan Fermin <br />
+Ian Fawaz <br />
+Chris Chang <br />
+Richard Li <br />
