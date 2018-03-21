@@ -22,6 +22,7 @@ $('.table-remove').click(function () {
 //   $row.next().after($row.get(0));
 // });
 
+
 // A few jQuery helpers for exporting only
 jQuery.fn.pop = [].pop;
 jQuery.fn.shift = [].shift;
@@ -52,23 +53,3 @@ $BTN.click(function () {
   // Output the result
   $EXPORT.text(JSON.stringify(data));
 });
-
-function addToTable(){
-  obj = require;
-  dbParam = JSON.stringify(obj);
-  xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          myObj = JSON.parse(this.responseText);
-          txt += "<table border='1'>"
-          for (x in myObj) {
-              txt += "<tr><td>" + myObj[x].name + "</td></tr>";
-          }
-          txt += "</table>" 
-          document.getElementById("demo").innerHTML = txt;
-      }
-  }
-  xmlhttp.open("POST", "json_demo_db_post.php", true);
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.send("x=" + dbParam);
-}

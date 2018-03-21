@@ -1,37 +1,76 @@
-header {
-	width: 200px;
-	margin: 0 auto;
-	text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700|Raleway');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-	min-height: 400px; 
-	min-width: 800px;
+	height: 400px; 
+	width: 600px;
 }
 
 
-h1 {
-	/*color: orange;*/
+header {
+/*	margin: 0 auto;*/
+	width: 100%;
+	font-size: 2em;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	padding-left: 30px;
+
 }
 
 
 main {
 	width: 100%;
 	height: 400px;
+	overflow: auto;
 }
 
-#button {
-	width: 110px;
-	margin: 0 auto;
-	font-size: .5em;
+
+h1{
+	float:left;
+	margin-left: auto;
 }
+#logoTop{
+	float: left;
+	display: inline-block;
+	width: 50px;
+	height: auto;
+	padding-top: 10px;
+	margin-right: auto;
+}
+
+
+
+thead{
+	font-family: 'Oswald';
+	text-transform: uppercase;
+	font-size: 1.3em;
+}
+
+tbody, #sendMessage{
+	font-family: 'Raleway';
+	text-transform: lowercase;
+	color: rgb(50, 50, 50);
+}
+
+button{
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+}
+
 
 #push {
 	width: 100%;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.2em;
 	/*background: orange;*/
 	/*color: white;*/
 }
-
 
 
 
@@ -48,6 +87,9 @@ main {
 .table-remove {
   color: #700;
   cursor: pointer;
+  font-family: "Oswald" sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
 }
 .table-remove:hover {
   color: #f00;
@@ -63,11 +105,19 @@ main {
 
 .table-add {
   color: #070;
-  cursor: pointer;
   position: absolute;
-  top: 8px;
-  right: 0;
+  left: 50%;
+  font-size: 3em;
+  font-weight: 700;
 }
 .table-add:hover {
   color: #0b0;
+}
+
+#export-btn{
+	font-family: 'Oswald', sans-serif;
+}
+
+html {
+	font-family: 'Oswald', sans-serif;
 }

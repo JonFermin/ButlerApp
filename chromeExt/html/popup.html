@@ -11,54 +11,66 @@
 
 
   </head>
-    <body>
-      <header>
-        <h1>BUTLER</h1>
-      </header>
+    <body> 
+        <header>
+          <h1>BUTLER</h1>  <img id="logoTop" src="butler.png">
+        </header>
+          <div class="table-add"> + </div>
+        <main id="ingredientsList">
+          <div class="container">
+          <div id="table" class="table-editable">
+            
+            <table class="table" id="mainTable">
+              <thead>
+                <tr>
+                  <th>Quantity</th>
+                  <th>Unit</th>
+                  <th>Ingredient</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <td contenteditable="true">Add Quantity</td>
+                <td contenteditable="true">Add Units</td>
+                <td contenteditable="true">Add Ingredients</td>
+                <td>
+                <span class="table-remove"> X </span>
+                </td>
+              <tr class="hide">
+                <td contenteditable="true">Add Quantity</td>
+                <td contenteditable="true">Add Units</td>
+                <td contenteditable="true">Add Ingredients</td>
+                <td>
+                  <span class="table-remove"> X </span>
+                </td>
+              </tr>
+              </tbody>
+   
+            </table>
+            
+          </div>
+            
+            <button id="export-btn" class="btn btn-primary">Export Data</button> 
+            <p id="export"></p>
+          </div>
+        </main>
       
-      <main id="ingredientsList">
-    <div class="container">
-    <div id="table" class="table-editable">
-      <span class="table-add glyphicon glyphicon-plus"></span>
-      <table class="table">
-        <tr>
-          <th>Quantity</th>
-          <th>Unit</th>
-          <th>Ingredient</th>
-        </tr>
-        <tr class="hide">
-          <td contenteditable="true">Untitled</td>
-          <td contenteditable="true">undefined</td>
-          <td contenteditable="true">undefined</td>
-          <td>
-            <span class="table-remove glyphicon glyphicon-remove"></span>
-          </td>
-        </tr>
-      </table>
-    </div>
-      
-      <button id="export-btn" class="btn btn-primary">Export Data</button>
-      <p id="export"></p>
-    </div>
-      </main>
-      <div id="button">
+
+        <!-- <button id="add"> Add To Table </button> -->
         <button id="push"> Grab Ingredients </button>
       </div>
 
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    
-
-    <script
-      src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-      integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-      crossorigin="anonymous"></script>
-    <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
 
 
+
+
+
+    <script src="../js/assets/jquery-3.3.1.min.js"></script>
+    <script src='../js/assets/jquery-ui.min.js'></script>
+    <script src='../js/assets/bootstrap.min.js'></script>
+    <script src='../js/assets/underscore.js'></script>
     <script type="text/javascript" src="../js/table.js"></script>
     <script type="text/javascript" src="../js/popup.js"></script>
-
 
     </body>
 </html>

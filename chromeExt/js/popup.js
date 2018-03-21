@@ -41,11 +41,46 @@ function saveToStorage(value){
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  var OnlyButton = $("push");
+  var OnlyButton = document.getElementById("push");
   OnlyButton.addEventListener('click', httpGet, false);
   console.log(httpGet);
   // document.getElementById("ingredientsList").innerHTML = JSON.stringify(httpGet);
 });
 
 
+var object = [
+  {
+    "Ingredient": 1,
+    "Quantity": "rooter",
+    "Unit": "12345",
+  },
+];
+
+function createTable(){
+  // $('#mainTable').append('<table id="jsonTable"><thead><tr></tr></thead><tbody></tbody></table>');
+  
+  // $.each(Object.keys(object[0]), function(index, key){
+  //   $('#mainTable thead tr').append('<th>' + key + '</th>');
+  // }); 
+  $.each(object, function(index, jsonObject){     
+    if(Object.keys(jsonObject).length > 0){
+      var tableRow = '<tr>';
+      $.each(Object.keys(jsonObject), function(i, key){
+         tableRow += '<td>' + jsonObject[key] + '</td>';
+      });
+      tableRow += "</tr>";
+      $('#jsonTable tbody').append(tableRow);
+    }
+  });
+}
+
+$(document).ready(function(){
+  createTable();
+});
+
+$("#add").click(createTable());
+
+
+
+// https://stackoverflow.com/questions/42558090/how-to-create-html-table-based-on-json
 
