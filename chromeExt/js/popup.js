@@ -15,8 +15,7 @@ function httpGet(theUrl){
       if (xmlHttp.readyState == XMLHttpRequest.DONE) {
         console.log("Writing Ingredient List to Extension");
         // console.log(JSON.parse(xmlHttp.responseText));
-        $("#ingredientsList")[0].append(xmlHttp.responseText);
-        addToTable(JSON.parse(xmlHttp.responseText));
+        // $("#ingredientsList")[0].append(xmlHttp.responseText);
         chrome.storage.sync.get("butler", function(item) {
           if( !item["butler"] ) {
             item["butler"] = {}
@@ -25,6 +24,7 @@ function httpGet(theUrl){
           console.log(item);
           saveToStorage(item);
         } );
+        addToTable(JSON.parse(xmlHttp.responseText));
         return xmlHttp.responseText;
       }
     }
@@ -70,19 +70,16 @@ function addToTable(object){
          tableRow += '<td contenteditable="true">' + jsonObject[key] + '</td>';
          console.log(jsonObject[key])
       });
+      tableRow += "<td><span class='table-remove'> X </span></td>"
       tableRow += "</tr>";
       $('#table tbody').append(tableRow);
     }
   });
 }
 
-$(document).ready(function(){
-  addToTable();
-});
-
-// $("#add").click(createTable());
-
-
+// $(document).ready(function(){
+//   addToTable();
+// });
 
 // https://stackoverflow.com/questions/42558090/how-to-create-html-table-based-on-json
 
