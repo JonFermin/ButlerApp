@@ -14,12 +14,21 @@ html {
 
 header {
 /*	margin: 0 auto;*/
+	height: 70px;
 	width: 100%;
 	font-size: 2em;
 	text-align: center;
 	font-family: 'Oswald', sans-serif;
 	padding-left: 30px;
+	background: orange;
 
+}
+
+header h1{
+	z-index: 1;
+	margin-top: 7px;
+	font-size: 1.8em !important;
+	color: black;
 }
 
 
@@ -35,15 +44,16 @@ h1{
 	margin-left: auto;
 }
 #logoTop{
-	float: left;
-	display: inline-block;
-	width: 50px;
+	position: absolute;
+	width: 160px;
 	height: auto;
-	padding-top: 10px;
-	margin-right: auto;
+	right: 20px;
+	top: -30px;
 }
 
-
+table {
+	margin-top: 20px;
+}
 
 thead{
 	font-family: 'Oswald';
@@ -61,6 +71,7 @@ button{
 	font-family: 'Oswald', sans-serif;
 	text-transform: uppercase;
 }
+
 
 
 #push {
@@ -85,33 +96,35 @@ button{
 }
 
 .table-remove {
-  color: #700;
+  color: #B00000 ;
   cursor: pointer;
   font-family: "Oswald" sans-serif;
   font-weight: 700;
   font-size: 1.2em;
 }
 .table-remove:hover {
-  color: #f00;
+  color: #FF0000;
 }
 
-.table-up, .table-down {
+/*.table-up, .table-down {
   color: #007;
   cursor: pointer;
 }
 .table-up:hover, .table-down:hover {
   color: #00f;
 }
-
+*/
 .table-add {
-  color: #070;
-  position: absolute;
-  left: 50%;
-  font-size: 3em;
-  font-weight: 700;
+	z-index: 1;
+	color: green;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	font-size: 3em;
+	font-weight: 700;
 }
 .table-add:hover {
-  color: #0b0;
+  color: lime;
 }
 
 #export-btn{

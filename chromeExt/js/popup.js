@@ -16,6 +16,7 @@ function httpGet(theUrl){
         console.log("Writing Ingredient List to Extension");
         // console.log(JSON.parse(xmlHttp.responseText));
         $("#ingredientsList")[0].append(xmlHttp.responseText);
+        addToTable(JSON.parse(xmlHttp.responseText));
         chrome.storage.sync.get("butler", function(item) {
           if( !item["butler"] ) {
             item["butler"] = {}
@@ -56,7 +57,7 @@ var object = [
   },
 ];
 
-function createTable(){
+function addToTable(object){
   // $('#mainTable').append('<table id="jsonTable"><thead><tr></tr></thead><tbody></tbody></table>');
   
   // $.each(Object.keys(object[0]), function(index, key){
@@ -66,19 +67,20 @@ function createTable(){
     if(Object.keys(jsonObject).length > 0){
       var tableRow = '<tr>';
       $.each(Object.keys(jsonObject), function(i, key){
-         tableRow += '<td>' + jsonObject[key] + '</td>';
+         tableRow += '<td contenteditable="true">' + jsonObject[key] + '</td>';
+         console.log(jsonObject[key])
       });
       tableRow += "</tr>";
-      $('#jsonTable tbody').append(tableRow);
+      $('#table tbody').append(tableRow);
     }
   });
 }
 
 $(document).ready(function(){
-  createTable();
+  addToTable();
 });
 
-$("#add").click(createTable());
+// $("#add").click(createTable());
 
 
 
