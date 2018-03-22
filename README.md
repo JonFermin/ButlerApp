@@ -1,6 +1,13 @@
 # ButlerApp
 Finish and order your groceries with a few clicks!
 
+### Contributors
+Jonathan Fermin <br />
+Josh Fermin <br />
+Ian Fawaz <br />
+Chris Chang <br />
+Richard Li <br />
+
 ![alt text](./documentation/draft1.png)
 
 ## Pitch
@@ -29,8 +36,4 @@ The goal with this application is to reduce time shopping for groceries and offe
 - Meal Plan Calendar
 - OCR - input recipe from image
 
-### Contributors
-Jonathan Fermin <br />
-Ian Fawaz <br />
-Chris Chang <br />
-Richard Li <br />
+

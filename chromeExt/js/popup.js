@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // document.getElementById("ingredientsList").innerHTML = JSON.stringify(httpGet);
 });
 
+$('.table-remove').click(function () {
+  $(this).parents('tr').detach();
+});
 
 var object = [
   {
@@ -73,6 +76,9 @@ function addToTable(object){
       tableRow += "<td><span class='table-remove'> X </span></td>"
       tableRow += "</tr>";
       $('#table tbody').append(tableRow);
+      $('.table-remove').click(function () {
+        $(this).parents('tr').detach();
+      });
     }
   });
 }
