@@ -8,19 +8,15 @@
     
     <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+    <script type="text/javascript" src="../js/jspdf.debug.js"></script>
 
 
   </head>
     <body> 
-        <header>
-          <h1>BUTLER</h1>  
-        </header>
-        <img id="logoTop" src="butler.svg">
-          <div class="table-add"> + </div>
+        <header></header>
         <main id="ingredientsList">
           <div class="container">
           <div id="table" class="table-editable">
-            
             <table class="table" id="mainTable">
               <thead>
                 <tr>
@@ -31,9 +27,9 @@
                 </tr>
               </thead>
               <tbody>
-                <td contenteditable="true">Add Quantity</td>
-                <td contenteditable="true">Add Units</td>
-                <td contenteditable="true">Add Ingredients</td>
+                  <td contenteditable="true" >Add Quantity</td>
+                  <td contenteditable="true">Add Units</td>
+                  <td contenteditable="true">Add Ingredients</td>
                 <td>
                 <span class="table-remove"> X </span>
                 </td>
@@ -50,9 +46,9 @@
               </tbody>
    
             </table>
-            
           </div>
-            
+          <div class="table-add"> + </div>
+            <button id="push"> Grab Ingredients </button>
             <button id="export-btn" class="btn btn-primary">Export Data</button> 
             <p id="export"></p>
           </div>
@@ -61,7 +57,7 @@
         <!-- <button id="debugger"> Clear Chrome Storage </button> -->
         
         <!-- <button id="add"> Add To Table </button> -->
-        <button id="push"> Grab Ingredients </button>
+        
 
 
       </div>
@@ -75,7 +71,7 @@
     <script src='../js/assets/jquery-ui.min.js'></script>
     <script src='../js/assets/bootstrap.min.js'></script>
     <script src='../js/assets/underscore.js'></script>
-    <script type="text/javascript" src="../js/table.js"></script>
+<!--     <script type="text/javascript" src="../js/table.js"></script> -->
     <script type="text/javascript" src="../js/popup.js"></script>
 
     </body>

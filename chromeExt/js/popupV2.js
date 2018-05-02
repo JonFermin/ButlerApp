@@ -3,23 +3,29 @@ var Ingredient = "ingredient";
 
 
 function httpGet(theUrl){
-  // remove this when stuff works again
-  
   chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     var url = tabs[0].url;
     var xmlHttp = new XMLHttpRequest();
     var opening = xmlHttp.open( "POST", "https://butler-app-launch.herokuapp.com/", true ); // false for synchronous request
     xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
-    chrome.storage.sync.get("butler", function(item) {
-      xmlHttp.send(JSON.stringify(item));
-    } );
+    // chrome.storage.sync.get("butler", function(item) {
+    //   xmlHttp.send(JSON.stringify(item));
+    // } );
+
+    console.log (tabs[0].url);
+    try{
+      xmlHttp.send(tabs[0].url);
+    } catch (error) {
+      console.error(error);
+    }
+    
 
     xmlHttp.onreadystatechange = function() {
       if (xmlHttp.readyState == XMLHttpRequest.DONE) {
         console.log("Writing Ingredient List to Extension");
-        // console.log(JSON.parse(xmlHttp.responseText));
-        // $("#ingredientsList")[0].append(xmlHttp.responseText);
+        console.log (xmlHttp.responseText)
+        saveToStorage({Ingredient: JSON.parse(xmlHttp.responseText)});
         chrome.storage.sync.get("butler", function(item) {
           if( !item["butler"] ) {
             item["butler"] = {}
@@ -27,9 +33,15 @@ function httpGet(theUrl){
           item["butler"][url] = null;
           console.log(item);
           saveToStorage(item);
+          console.log("Here:" + xmlHttp.responseText);
+          
         } );
-        addToTable(JSON.parse(xmlHttp.responseText));
-        chrome.storage.sync.clear();
+        chrome.storage.sync.get("Ingredient", function(item){
+          console.log(item);
+          item.Ingredient.forEach( function(object) {
+            addToTable(object);
+          })
+        })
         return xmlHttp.responseText;
       }
     }
@@ -204,7 +216,7 @@ $BTN.click(function(){
         });
     });    
     getImageFromUrl('butler.png', createPDF);
-    pdf.save('butler-ingredients-list.pdf');
+    pdf.save('sample-file.pdf');
 });
 
 

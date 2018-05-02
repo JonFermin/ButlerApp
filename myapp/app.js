@@ -23,6 +23,10 @@ app.use(function(req, res, next) {
   next();
 });
 
+// app.get('/hello', function(req, res) {
+// 	res.send("hello ninja");
+// } );
+
 app.post('/', function (req, res) { // req is object containing information about the HTTP request
 								   // res is used to send back the desired HTTP response
 	console.log("im here");
@@ -50,21 +54,20 @@ app.post('/', function (req, res) { // req is object containing information abou
 		}
 		console.log("ping!!!");
 		console.log(JSON.stringify(ingredientArray));
-		res.send(JSON.stringify(ingredientArray));
-
+		return res.send(JSON.stringify(ingredientArray));
 	});
 });
 
 // app.get('/', function)
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     pythonProcess.stdout.on('data', function (data){
 	// Do something with the data returned from python script
 		console.log("I'm here");
 		var arr = JSON.stringify(data.toString('utf8'),null,2).replace(']\\n"','').replace("'\\'","");
 		var arr2 = data.toString('utf8');
 		var arrSplit = arr.split(',');
-		console.log(arr);
+		console.log("EXAMPLE" + arr);
 
 	});
 });

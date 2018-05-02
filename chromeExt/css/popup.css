@@ -11,33 +11,46 @@ html {
 	width: 600px;
 }
 
+body {
+	width: 100%;
+}
+
 
 header {
-/*	margin: 0 auto;*/
-	height: 70px;
+	display: block;
+	height: 85px;
 	width: 100%;
 	font-size: 2em;
 	text-align: center;
-	font-family: 'Oswald', sans-serif;
+	font-family: 'futura', sans-serif;
+	font-weight: 300;
+	text-transform: lowercase;
 	padding-left: 30px;
-	background: orange;
-
+	background: url("../html/header.svg");
+	background-size: cover;
 }
 
-header h1{
+/*header h1{
 	z-index: 1;
 	margin-top: 7px;
 	font-size: 1.8em !important;
 	color: black;
 }
-
+*/
 
 main {
 	width: 100%;
 	height: 400px;
-	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto; 
+	width: 95%;
+	margin: 0 auto;
 }
 
+
+#table {
+	
+}
 
 h1{
 	float:left;
@@ -53,18 +66,24 @@ h1{
 
 table {
 	margin-top: 20px;
+	width: 400px;
+	border-collapse: collapse;
 }
 
 thead{
 	font-family: 'Oswald';
+	font-weight: medium;
 	text-transform: uppercase;
 	font-size: 1.3em;
+
 }
+
 
 tbody, #sendMessage{
 	font-family: 'Raleway';
 	text-transform: lowercase;
 	color: rgb(50, 50, 50);
+
 }
 
 button{
@@ -72,25 +91,32 @@ button{
 	text-transform: uppercase;
 }
 
-
+#push, #export-btn {
+	padding: 8px;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	text-transform: lowercase;
+	background: white;
+	border: 3px solid black;
+	color: black;
+	border-radius: 5px;
+}
 
 #push {
-	width: 100%;
-	font-family: 'Oswald', sans-serif;
-	text-transform: uppercase;
-	font-size: 1.2em;
-	/*background: orange;*/
-	/*color: white;*/
+	position: relative;	
+}
+
+#export-btn{
+	position: absolute;
+	top: 18px;
+	right: 28px;
+	background: white;
 }
 
 
 
 
 /*Table CSS*/
-
-.table-editable {
-  position: relative;
-}
 .table-editable .glyphicon {
   font-size: 20px;
 }
@@ -114,11 +140,13 @@ button{
   color: #00f;
 }
 */
+
+
 .table-add {
 	z-index: 1;
 	color: green;
-	position: absolute;
-	top: 10px;
+	position: relative;
+	margin-top: -35px;
 	left: 50%;
 	font-size: 3em;
 	font-weight: 700;
@@ -127,9 +155,7 @@ button{
   color: lime;
 }
 
-#export-btn{
-	font-family: 'Oswald', sans-serif;
-}
+
 
 html {
 	font-family: 'Oswald', sans-serif;
