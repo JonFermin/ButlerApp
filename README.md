@@ -11,7 +11,7 @@ Richard Li <br />
 ![alt text](./documentation/draft1.png)
 
 ## Pitch
-[Pitch Deck](https://docs.google.com/presentation/d/1oPtpFimSSBVMaGy5ftRDz7ZkC8TUZFRyG5sHph614Xc/edit?usp=sharing)
+[Pitch Deck](https://docs.google.com/presentation/d/1ubP5mRnue_o71JCMPHFGJxdXheMtECFc1FT-An1EfhA/edit?usp=sharing)
 
 Getting into cooking is hard enough as it is. Grocery shopping is time consuming. Meal planning requires writing a long list that you take with you to the grocery store.
 What if you could click the recipe you were browsing on Bon Appetit, and order it to your house in a couple clicks?
